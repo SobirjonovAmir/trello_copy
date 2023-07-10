@@ -1,0 +1,35 @@
+.trash {
+  position: fixed;
+  bottom: 0;
+  left: 50px;
+  opacity: 0;
+  transition: opacity 600ms, bottom 600ms cubic-bezier(0.305, 0.015, 0.35, 1.385);
+}
+.trash .lines {
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 200ms cubic-bezier(0.305, 0.015, 0.35, 1.385);
+}
+.trash .lines#one {
+  transition-delay: 300ms;
+}
+.trash .lines#two {
+  transition-delay: 400ms;
+}
+.trash .lines#three {
+  transition-delay: 500ms;
+}
+.trash.active {
+  opacity: 1;
+  bottom: 40px;
+}
+.trash.active .lines {
+  transform: scaleY(1);
+}
+.trash.opened .cover {
+  transform: rotateZ(0) translateY(0) translateX(0);
+}
+.trash .cover {
+  transform: rotateZ(35deg) translateY(-14px) translateX(19px);
+  transition: transform 500ms cubic-bezier(0.305, 0.015, 0.35, 1.39);
+}
